@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6vamfvjppqax"]
+
+[ext_resource type="Script" uid="uid://b8byfvlofa6fs" path="res://scripts/history_3.gd" id="1_wgymo"]
+[ext_resource type="Texture2D" uid="uid://b7qg6o8d6l048" path="res://CARPETADEIMAGENES/Bosque.JPG" id="2_r32fi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r32fi"]
+bg_color = Color(0.713726, 0.427451, 0.470588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5jyf"]
+bg_color = Color(0.4, 0.376471, 0.415686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="history3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wgymo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 651.0
+texture = ExtResource("2_r32fi")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 51.0
+offset_right = 234.0
+offset_bottom = 107.0
+color = Color(1, 1, 1, 0.678431)
+
+[node name="next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 561.0
+offset_right = 1130.0
+offset_bottom = 628.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_r32fi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5jyf")
+text = "SIGUIENTE"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 57.0
+offset_right = 210.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "ENEMIGOS"
+
+[connection signal="pressed" from="next" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
