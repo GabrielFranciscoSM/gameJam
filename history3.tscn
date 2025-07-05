@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6vamfvjppqax"]
+[gd_scene load_steps=7 format=3 uid="uid://c6vamfvjppqax"]
 
 [ext_resource type="Script" uid="uid://b8byfvlofa6fs" path="res://scripts/history_3.gd" id="1_wgymo"]
 [ext_resource type="Texture2D" uid="uid://b7qg6o8d6l048" path="res://CARPETADEIMAGENES/Bosque.JPG" id="2_r32fi"]
@@ -11,6 +11,20 @@ border_width_right = 5
 border_width_bottom = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5jyf"]
+bg_color = Color(0.4, 0.376471, 0.415686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8xtc"]
+bg_color = Color(0.713726, 0.427451, 0.470588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxom4"]
 bg_color = Color(0.4, 0.376471, 0.415686, 1)
 border_width_left = 5
 border_width_top = 5
@@ -42,6 +56,7 @@ offset_left = 968.0
 offset_top = 561.0
 offset_right = 1130.0
 offset_bottom = 628.0
+theme_override_font_sizes/font_size = 20
 theme_override_styles/hover = SubResource("StyleBoxFlat_r32fi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s5jyf")
 text = "SIGUIENTE"
@@ -56,5 +71,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "ENEMIGOS"
 
-[connection signal="pressed" from="next" to="." method="_on_button_pressed"]
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 561.0
+offset_right = 185.0
+offset_bottom = 624.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8xtc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cxom4")
+text = "ANTERIOR"
+
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
